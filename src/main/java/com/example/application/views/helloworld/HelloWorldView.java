@@ -25,11 +25,20 @@ public class HelloWorldView extends HorizontalLayout {
             Notification.show("Hello " + name.getValue());
         });
         sayHello.addClickShortcut(Key.ENTER);
-
+        String testSwitch = "test";
+        System.out.println(testSwitch(testSwitch));
         setMargin(true);
         setVerticalComponentAlignment(Alignment.END, name, sayHello);
 
         add(name, sayHello);
+    }
+
+    private String testSwitch(String value) {
+        return switch (value) {
+            case "test" -> "test";
+            case "prod" -> "Production";
+            default -> "N/A";
+        };
     }
 
 }
